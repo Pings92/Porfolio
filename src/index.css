@@ -1,10 +1,10 @@
 @import 'tailwindcss';
 
 @theme{
-  --color-background: purple
-  --color-forground: yellow
+  --color-background: purple;
+  --color-forground: yellow;
 
-  --color-card: pink
+  --color-card: pink;
 
   --color-primary: #20b2a6;
   --color-primary-foreground: #ffffff;
