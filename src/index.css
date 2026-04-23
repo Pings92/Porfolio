@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 @theme{
-  --color-background: purple;
+  --color-background: #e8df7d;
   --color-forground: yellow;
 
   --color-card: pink;
@@ -9,11 +9,11 @@
   --color-primary: #20b2a6;
   --color-primary-foreground: #ffffff;
 
-  --color-secondary: #1f2830;
+  --color-secondary: #0855b1;
   --color-secondary-foreground: #20b2a6;
 
-  --color-muted: #252e37;
-  --color-muted-foreground: #7a8491;
+  --color-muted: #de104d;
+  --color-muted-foreground: #243127;
 
   --color-border: #242b32;
 
@@ -47,9 +47,19 @@
     backdrop-filter: blur(24-px);
     border: 1px solid color-mix(in rgb, var(--color-border) 60%, transparent);
  }
+ .glow-text {
+    text-shadow: 0 0 30px
+      color-mix(in srgb, var(--color-primary) 50%, transparent);
+ }
+ .glow-border {
+  box-shadow: 0 0 20px
+      color-mix(in srgb, var(--color-primary) 20%, transparent),
+      inset 0 0 20px
+      color-mix(in srgb, var(--color-primary) 5%, transparent);
+ }
 }
 @layer utilities {
-  @keyframes fadeIn {
+  @keyframes fade-in {
     from {
       opacity: 0;
       transform: translateY(20px);
@@ -78,5 +88,49 @@
   }
   .animate-fade-in {
     animation: fade-in 0.8s ease-out both;
+    
   }
+  .animation-delay-100 {
+      animation-delay: 0.1s;
+    }
+  .animation-delay-200 {
+      animation-delay: 0.2s;
+    }
+  .animation-delay-300 {
+      animation-delay: 0.3s;
+    }
+  .animation-delay-400 {
+      animation-delay: 0.4s;
+    }
+  .animation-delay-500 {
+      animation-delay: 0.5s;
+    }
+  .animation-delay-600 {
+      animation-delay: 0.6s;
+    }        
+    .animation-delay-800 {
+      animation-delay: 0.8s;
+    }
+ @keyframes animated-border {
+    0% {
+      stroke-dashoffset: 400;
+    }
+    100% {
+      stroke-dashoffset: -550;
+    }
+  }
+
+  .group:hover .animated-border-path {
+    animation: animated-border 1.5s linear infinite;
+  }
+  .animated-border:hover {
+    background-color: color-mix(in srgb, #26c4b8 15%, transparent);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 0 20px color-mix (in srgb, #26c4b8 20%, transparent);
+  }
+  .timeline-glow {
+    box-shadow:
+      0 0 40px color-mix(in srgb, var(--color-primary) 35%, transparent),
+      0 0 80px color-mix(in srgb, var(--color-primary) 25%, transparent);
+  }  
 }
