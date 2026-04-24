@@ -1,7 +1,29 @@
 import react from "react";
 import { Button } from "@/components/button";
-import {ArrowRight, Download} from "lucide-react";
+import {ArrowRight, ChevronDown, Download} from "lucide-react";
 import AnimatedBorderButton from "../components/AnimatedBorderButton";
+import React from "react";
+
+const skills = [
+    "Javascript" ,
+    "React" ,
+    "React Native" ,
+    "Node.js" ,
+    "TypeScript" ,
+    "MongoDB" ,
+    "HTML5" ,
+    "CSS3" ,
+    "Tailwaind CSS" ,
+    "Next.js" ,
+    "Express.js" ,
+    "Figma" ,
+    "Git" ,
+    "Docker" ,
+    "Github Actions" ,
+    "PostgresSQL" ,
+    "SQL" ,
+
+]
 
 export const Hero = () => {
     return ( 
@@ -117,16 +139,66 @@ export const Hero = () => {
                         </div>
                     </div>
                 {/* Contenu de droite image profil */}
-                <div className="relative animate-fade-in animation-delay-300">
-                    {/* Image de profil */}
-                    <div className="relative max-w-md mx-auto ">
-                        <div className="relative glass rounded-3x1 p-2 glow-border">
-                            <img 
-                            src="public\projectImage\GGI.png" 
-                            alt="photo de profil" 
-                            className="w-full aspect-4/5 object-cover rounded-2x1" />
+                    <div className="relative animate-fade-in animation-delay-300">
+                        {/* Image de profil */}
+                        <div className="relative max-w-md mx-auto ">
+                            <div 
+                            className="absolute inset-0 rounded-3xl bg-linear-to-br
+                            from-primary/30 via-transparent to primary/10
+                            blur-2xl animate-pulse"
+                            />
+                            <div className="relative glass rounded-3x1 p-2 glow-border">
+                                <img 
+                                src="public\projectImage\GGI3.png" 
+                                alt="photo de profil" 
+                                className="w-full aspect-4/5 object-cover rounded-2x1" 
+                                />
+                                {/* Badge Flottant */}
+                                <div className = "absolute -bottom-4 -right-4 glass rounded-x1 px-4 py-3 animate-float">
+                                    <div className= " flex items-center gap-3">
+                                        <div className = "w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+                                        <span className="text-sm font-medium">
+                                            Disponible pour de nouvelles opportunités
+                                        </span>
+                                    </div>
+                                </div>
+                                {/* Stats du badge */}
+                                <div className = "absolute -top-4 -left-4 glass rounded-x1 px-4 py-3 animate-float animation-delay-500"
+                                >
+                                    <div className="text-2x1 font-bold text-primary">5+</div>
+                                    <div className = " text-xs text-muted-foreground">Années Exp</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                {/* technologies */}
+                    <div className="mt-20 animate-fade-in animation-delay-600">
+                        <p className = "text-sm text-muted-foreground mb-6 text-center">
+                            Technologie pratiqués
+                        </p>
+                        <div className = "relative overflow-hidden">
+                            <div className = "flex animate-marquee">
+                                {[...skills, ...skills].map((skill, id) => (
+                                <div key={id} className="shrink-0 px-8 py-4">
+                                    <span className="text-x1 font-semibold text-muted-foreground/50 hover:text-secondary-foreground transition-colors">
+                                        {skill}
+                                    </span>
+                                </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                {/* scroll */}
+                <div className="absolute bottom-8 left-1/2 -translate-x-1/2
+                                animate-fade-in animation-delay-800">
+                    <a 
+                        href="#about"
+                        className="flex flex-col items-center gap-2 text-secondary-foreground
+                                   hover:text-primary transition-colors"
+                    >
+                        <span className = "text-xs uppercase tracking-wider">Scroll</span>
+                        <ChevronDown className = "w-6 h-6 animate-bounce" />
+                    </a>
                 </div>
                 </div>
             </div>
