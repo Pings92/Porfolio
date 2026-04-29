@@ -3,7 +3,7 @@ import { Button } from "@/components/button";
 import {ArrowRight, ChevronDown, Download} from "lucide-react";
 import AnimatedBorderButton from "../components/AnimatedBorderButton";
 import React from "react";
-
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 const skills = [
     "Javascript" ,
     "React" ,
@@ -121,10 +121,10 @@ export const Hero = () => {
                         {/* Réseaux sociaux */}
                         <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
                             <span className="text-sm text-muted-foreground">Suivez-moi</span>
-                            {/* {[
-                                { icon Github, href: "http://github.com"},
-                                { icon Linkedin, href: "http://linkedin.com"},
-                                { icon Twitter, href: "http://twitter.com"},
+                            {[
+                                { icon: FaGithub , href: "http://github.com" },
+                                { icon: FaLinkedin , href: "http://linkedin.com" },
+                                // { icon: FaSquareXTwitter , href: "http://twitter.com" },
                             ].map((social, i) => (
                                 <a 
                                     key={i}
@@ -135,7 +135,7 @@ export const Hero = () => {
                                 >
                                     {<social.icon className="w-5 h-5"/>}
                                 </a>
-                            ))} */}
+                            ))}
                         </div>
                     </div>
                 {/* Contenu de droite image profil */}
